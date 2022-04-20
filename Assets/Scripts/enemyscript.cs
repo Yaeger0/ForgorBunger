@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class enemyscript : MonoBehaviour
 {
@@ -11,15 +12,19 @@ public class enemyscript : MonoBehaviour
     bool isTarget = false;
     public float fireRate;
     float nextTimeToFire = 0;
-    public static float healthAmount;
+    public float HP;
+    public float HPmax;
+    public float bulletForce;
 
     public Transform enemyFirePoint;
     public GameObject bulletPrefab;
-    public float bulletForce;
+    public GameObject HPUI;
+    public Slider slider;
 
     void Start()
     {
-        healthAmount = 1;
+        HP = HPmax;
+        slider.value = CalculateHP();
     }
 
     void FindPlayer()
@@ -35,6 +40,7 @@ public class enemyscript : MonoBehaviour
     // Update is called once per frame
     private void Update()
     {
+        slider.value = CalculateHP();
         if(isTarget==false)
         {
             FindPlayer();
@@ -53,18 +59,28 @@ public class enemyscript : MonoBehaviour
                     Shoot();
                 }
             }
-            if(healthAmount <= 0)
+            if(HP > HPmax)
             {
-                Destroy(this.gameObject);
+                HP = HPmax;
+            }
+
+            if(HP <= 0)
+            {
+                Destroy(gameObject);
             }
         }
+    }
+
+    float CalculateHP()
+    {
+        return HP/HPmax;
     }
 
     void OnCollisionEnter2D(Collision2D collision)
     {
         if(collision.gameObject.tag == "Bullet")
         {
-            healthAmount -= 0.1f;
+            HP -= 1f;
         }
     }
 

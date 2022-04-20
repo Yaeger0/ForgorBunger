@@ -148,6 +148,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   speed: 3
+  aimspeed: 5
   currentHealth: 100
   maxHealth: 100
   healthBar: {fileID: 5848967342917437047}
