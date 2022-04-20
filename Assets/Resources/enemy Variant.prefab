@@ -23,6 +23,22 @@ PrefabInstance:
       propertyPath: m_Offset.y
       value: 0.083782405
       objectReference: {fileID: 0}
+    - target: {fileID: -4300364108908165819, guid: 77d33e0e6c0c0694ea95b7d0d04c2800, type: 3}
+      propertyPath: fireRate
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: -4300364108908165819, guid: 77d33e0e6c0c0694ea95b7d0d04c2800, type: 3}
+      propertyPath: bulletForce
+      value: 10
+      objectReference: {fileID: 0}
+    - target: {fileID: -4300364108908165819, guid: 77d33e0e6c0c0694ea95b7d0d04c2800, type: 3}
+      propertyPath: bulletPrefab
+      value: 
+      objectReference: {fileID: 7947050243600793171, guid: 87a26acc884a88f4899e4cff31cc94a3, type: 3}
+    - target: {fileID: -1971059024365472237, guid: 77d33e0e6c0c0694ea95b7d0d04c2800, type: 3}
+      propertyPath: m_BodyType
+      value: 2
+      objectReference: {fileID: 0}
     - target: {fileID: -1971059024365472237, guid: 77d33e0e6c0c0694ea95b7d0d04c2800, type: 3}
       propertyPath: m_Simulated
       value: 1
