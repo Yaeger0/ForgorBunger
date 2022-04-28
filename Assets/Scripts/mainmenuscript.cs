@@ -5,12 +5,12 @@ using UnityEngine.SceneManagement;
 
 public class mainmenuscript : MonoBehaviour
 {
-    public void PlayTheGame()
+    public void PlayTheGame()//funktsioon, mis kutsub esile stseeni laadimise, "Start" nupu vajutusel
     {
-        SceneManager.LoadScene("Scene1");
+        SceneManager.LoadScene("Scenes/ProceduralTest");
     }
     
-    public void QuitTheGame()
+    public void QuitTheGame()//funktsioon, mis kutsub esile mangu kinni minemise, "Quit" nupu vajutusel
     {
         Debug.Log("Quitting the game.");
         Application.Quit();

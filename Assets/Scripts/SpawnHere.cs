@@ -8,13 +8,13 @@ public class SpawnHere : MonoBehaviour
     public GameObject player;
 
 
-    void Awake()
+    void Awake()//esimesena antakse muutujale, spawnkoht
     {
         spawnLocations = GameObject.FindGameObjectsWithTag("SpawnPoint");
     }
 
     // Start is called before the first frame update
-    void Start()
+    void Start()//leitakse karakteri prefab ning spawnitakse see
     {
         player = (GameObject)Resources.Load("player", typeof(GameObject));
 
@@ -27,7 +27,7 @@ public class SpawnHere : MonoBehaviour
         
     }
 
-    private void SpawnPlayer()
+    private void SpawnPlayer()//funktsioon karakteri spawnimiseks
     {
         int spawn = Random.Range(0, spawnLocations.Length);
         GameObject.Instantiate(player, spawnLocations[spawn].transform.position, Quaternion.identity);

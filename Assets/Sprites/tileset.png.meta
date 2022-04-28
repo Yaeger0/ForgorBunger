@@ -26,6 +26,12 @@ TextureImporter:
   - first:
       213: 8233071653059976297
     second: player
+  - first:
+      213: -7775419718026629507
+    second: Border
+  - first:
+      213: -781294158744790408
+    second: Wall
   externalObjects: {}
   serializedVersion: 11
   mipmaps:
@@ -301,7 +307,7 @@ TextureImporter:
         width: 19
         height: 30
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 1, y: 1, z: 1, w: 1}
       outline: []
       physicsShape: []
@@ -309,6 +315,48 @@ TextureImporter:
       bones: []
       spriteID: 96c5afa3c0fb14270800000000000000
       internalID: 8233071653059976297
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Border
+      rect:
+        serializedVersion: 2
+        x: 4
+        y: 227
+        width: 91
+        height: 29
+      alignment: 9
+      pivot: {x: 0.498785, y: 0.4562683}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d7e647f56f8281490800000000000000
+      internalID: -7775419718026629507
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Wall
+      rect:
+        serializedVersion: 2
+        x: 352
+        y: 64
+        width: 96
+        height: 96
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 87adde22a194825f0800000000000000
+      internalID: -781294158744790408
       vertices: []
       indices: 
       edges: []

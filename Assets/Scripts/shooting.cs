@@ -11,12 +11,12 @@ public class shooting : MonoBehaviour
     playerscript PlayerScript;
     [SerializeField] GameObject player;
 
-    void Awake()
+    void Awake()//koige esimesena yhendatakse karakterikood antud koodiga
     {
         PlayerScript = player.GetComponent<playerscript>();
     }
     // Update is called once per frame
-    void Update()
+    void Update()//iga kaader kontrollitakse, kas tulistamise nupu vajutatakse ning kui jah siis karakter tulistab
     {
         if (Input.GetButtonDown("Fire1"))
         {
@@ -24,12 +24,12 @@ public class shooting : MonoBehaviour
         }
     }
 
-    void Shoot()
+    void Shoot()//funktsioon tulistamiseks
     {
-        if(PlayerScript.canMove==true)
+        if(PlayerScript.canMove==true)//tulistada saab ainult, kui karakter elus on
         {
-        GameObject bullet = Instantiate(bulletPrefab, firePoint.position, firePoint.rotation);
-        Rigidbody2D rb = bullet.GetComponent<Rigidbody2D>();
+        GameObject bullet = Instantiate(bulletPrefab, firePoint.position, firePoint.rotation);//kuuli loomine vintraua ees
+        Rigidbody2D rb = bullet.GetComponent<Rigidbody2D>();//kuulile rb2d omaduste andmine
         rb.AddForce(firePoint.right * bulletForce, ForceMode2D.Impulse);
         }
     }

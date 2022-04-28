@@ -21,14 +21,8 @@ public class finish : MonoBehaviour
     {
         if(collision.tag == "Player")
         {
-            if(SceneManager.GetActiveScene().buildIndex==1)
-            {
-                SceneManager.LoadScene(0);
-            }
-            else
-            {
-            SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
-            }
+            SceneManager.LoadScene(1);  //kui tuvastatakse kokkuporge mangija ning antud gameobjecti vahel,
+                                        //laetakse stseen uuesti, ehk mang hakkab otsast pihta, uue maailmaga
         }
     }
 }

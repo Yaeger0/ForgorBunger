@@ -19,6 +19,6 @@ public class HealthBar : MonoBehaviour
 
     public void SetHealth(int hp)
     {
-        healthBar.value = hp;
+        healthBar.value = hp;//seab sliderile vaartuse hp, elude koguse
     }
 }

@@ -6,15 +6,14 @@ using UnityEngine.UI;
 public class playerscript : MonoBehaviour
 {
     private Rigidbody2D rb2d;       //Reference to the Rigidbody2D component
-    public float speed;        //Speed variable
-    public float aimspeed;
+    public float speed;        //liikumis Speed variable
+    public float aimspeed;     //sihtimis ehk pooramis kiirus
     public int currentHealth = 0;
     public int maxHealth = 100;
     public HealthBar healthBar;
-    public bool canMove = true;
+    public bool canMove = true;//bool vaartus, selleks, et kontrollida, kas mangijat saab juhtida voi mitte
 
-    [SerializeField] private Text gameOver;
-
+    [SerializeField] private Text gameOver;//tekst muutuja selleks, kui mangija surma saab
 
     // Start is called before the first frame update
     void Start()
@@ -29,8 +28,8 @@ public class playerscript : MonoBehaviour
     {
         if(canMove==true)
         {
-            float moveHorizontal = Input.GetAxisRaw("Horizontal");
-            float moveVertical = Input.GetAxisRaw("Vertical");
+            float moveHorizontal = Input.GetAxisRaw("Horizontal");  //nupuvajutuste peale(w,a,s,d ning noolenupud)
+            float moveVertical = Input.GetAxisRaw("Vertical");      //maaratakse vaartus muutujatele, karakteri liigutamiseks
             Vector2 movement = new Vector2(moveHorizontal, moveVertical);
             //This supplies movement to the player
             rb2d.AddForce(movement * speed);
@@ -41,7 +40,7 @@ public class playerscript : MonoBehaviour
         }
     }
 
-    void OnCollisionEnter2D(Collision2D collision)
+    void OnCollisionEnter2D(Collision2D collision)//kuuli saades, saab karakter haiget
     {
         if (collision.gameObject.tag == "Bullet")
         {
@@ -54,18 +53,18 @@ public class playerscript : MonoBehaviour
     {
         currentHealth -= damage;
 
-        if(currentHealth < 0)
+        if(currentHealth < 0)//kui elud otsa saavad ei saa mangija enam karakterit kontrollida ning mangijale esitletakse mangu lopu tekst
         {
             canMove = false;
             GameOver();
         }
         else
         {
-            healthBar.SetHealth(currentHealth);
+            healthBar.SetHealth(currentHealth);//kui elud ei ole nullis uuendatakse elude kogust ekraanil
         }
     }
 
-    public void GameOver()
+    public void GameOver()//funktsioon mangu lopu teksti naitamiseks
     {
         gameOver.gameObject.SetActive(true);
     }
